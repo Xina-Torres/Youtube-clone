@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // set window manually by calling
+        window = UIWindow(frame: UIScreen.main.bounds) // updated from (frame: UIScreen.mainScreen().bounds)
+        // make window visible
+        window?.makeKeyAndVisible()
+        // you need to set your view controller to navigation controller which you'll provide with a rootviewcontroller and rvc is just the view controller instantiated
+        let layout = UICollectionViewFlowLayout()
+        // UICollectionViewFlowLayout
+        window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
+        
         return true
     }
 
